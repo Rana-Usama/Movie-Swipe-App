@@ -60,7 +60,7 @@ function LoginScreen(props) {
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
             <LoadingModal show={indicator} />
 
-            <View style={{ width: '100%', height: RFPercentage(35), justifyContent: 'center', alignItems: 'center', backgroundColor: Colors.primary }} >
+            <View style={{ width: '100%', height: RFPercentage(32), justifyContent: 'center', alignItems: 'center', backgroundColor: '#DE3F3F' }} >
                 <Text style={{ color: Colors.white, fontSize: RFPercentage(4.2), fontWeight: 'bold', marginTop: RFPercentage(-10) }} >
                     Welcome!
                 </Text>
@@ -80,9 +80,9 @@ function LoginScreen(props) {
                             placeholderColor={Colors.darkGrey}
                             height={RFPercentage(6.8)}
                             leftIconName={item.iconName}
-                            backgroundColor={Colors.grey}
+                            backgroundColor={Colors.secondary}
                             borderWidth={RFPercentage(0.2)}
-                            borderColor={Colors.grey}
+                            borderColor={'#FFA4A5'}
                             secure={item.secure}
                             borderRadius={RFPercentage(1.4)}
                             color={Colors.black}
@@ -101,14 +101,13 @@ function LoginScreen(props) {
                     title="LOGIN"
                     padding={RFPercentage(1.9)}
                     onPress={() => handleLogin()}
-                    backgroundColor={Colors.secondary}
+                    backgroundColor='#DE3F3F'
                     color={Colors.white}
                     bold={false}
                     borderRadius={RFPercentage(1.6)}
                     width={"42%"}
                 />
             </View>
-
         </Screen>
     );
 }
