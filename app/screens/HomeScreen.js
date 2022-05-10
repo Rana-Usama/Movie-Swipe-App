@@ -42,7 +42,7 @@ function HomeScreen(props) {
                         <Ionicons name="menu-sharp" style={{ fontSize: RFPercentage(4) }} color={Colors.white} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ width: '100%', height: RFPercentage(9), position: 'absolute', bottom: 0, backgroundColor: Colors.white, borderTopLeftRadius: RFPercentage(14) }} />
+                <View style={{ width: '100%', height: RFPercentage(7), position: 'absolute', bottom: 0, backgroundColor: Colors.white, borderTopLeftRadius: RFPercentage(14) }} />
             </View>
 
             {/* Box */}
