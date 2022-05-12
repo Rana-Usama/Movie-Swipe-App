@@ -46,7 +46,7 @@ function LoginScreen(props) {
             return true;
         }
 
-        // props.navigation.navigate("HomeScreen")
+        props.navigation.navigate("HomeScreen")
         try {
             // API INTEGRATION WILL COME HERE
         } catch (error) {
@@ -78,6 +78,7 @@ function LoginScreen(props) {
                         <InputField
                             placeholder={item.placeholder}
                             placeholderColor={Colors.darkGrey}
+                            placeholderAtCenter={true}
                             height={RFPercentage(6.8)}
                             leftIconName={item.iconName}
                             backgroundColor={Colors.secondary}

@@ -16,9 +16,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="OtherPersonMoviesScreen">
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="LoginScreen">
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Room1Screen" component={Room1Screen} />
         <Stack.Screen name="Room2Screen" component={Room2Screen} />
         <Stack.Screen name="LikedMoviesScreen" component={LikedMoviesScreen} />

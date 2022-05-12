@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MovieSwipe",
-    "slug": "MovieSwipe",
+    "name": "MovieSwipeApp",
+    "slug": "MovieSwipeApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
