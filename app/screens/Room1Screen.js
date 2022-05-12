@@ -15,16 +15,20 @@ function Room1Screen(props) {
 
     const cartData = [
         {
-            title: 'Movie Night'
+            title: 'Movie Night',
+            // onPress:''
         },
         {
-            title: 'Tomorrow Date'
+            title: 'Tomorrow Date',
+            // onPress:''
         },
         {
-            title: 'Happy Family'
+            title: 'Happy Family',
+            // onPress:''
         },
         {
-            title: 'Anime Friends'
+            title: 'Anime Friends',
+            onPress: 'Room2Screen',
         },
     ]
 
@@ -64,7 +68,7 @@ function Room1Screen(props) {
                     <Text style={{ position: 'absolute', right: 0, color: Colors.white, fontSize: RFPercentage(2.6), fontWeight: '600' }} >
                         Reflele
                     </Text>
-                    <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', left: 0 }} >
+                    <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.8} style={{ position: 'absolute', left: 0 }} >
                         <Ionicons name="menu-sharp" style={{ fontSize: RFPercentage(4) }} color={Colors.white} />
                     </TouchableOpacity>
                 </View>
@@ -78,14 +82,16 @@ function Room1Screen(props) {
                         JOIN ROOM
                     </Text>
 
-                    <View style={{ marginTop: RFPercentage(3), backgroundColor: Colors.secondary, width: '82%', height: RFPercentage(30), borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(3), backgroundColor: Colors.secondary, width: '82%', height: RFPercentage(29), borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
                         <ScrollView style={{ flex: 1, width: '100%' }} >
                             <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
 
                                 {cartData.map((item, i) => (
-                                    <Text key={i} style={{ fontSize: RFPercentage(2.2), marginTop: RFPercentage(3.5), color: Colors.darkGrey2 }} >
-                                        {item.title}
-                                    </Text>
+                                    <TouchableOpacity onPress={() => props.navigation.navigate(item.onPress)} key={i} activeOpacity={0.8} >
+                                        <Text style={{ fontSize: RFPercentage(2.2), marginTop: RFPercentage(3.5), color: Colors.darkGrey2 }} >
+                                            {item.title}
+                                        </Text>
+                                    </TouchableOpacity>
                                 ))}
                             </View>
                         </ScrollView>

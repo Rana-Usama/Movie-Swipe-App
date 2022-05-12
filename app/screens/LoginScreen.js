@@ -46,7 +46,7 @@ function LoginScreen(props) {
             return true;
         }
 
-        props.navigation.navigate("HomeScreen")
+        props.navigation.navigate("HomeDrawer")
         try {
             // API INTEGRATION WILL COME HERE
         } catch (error) {

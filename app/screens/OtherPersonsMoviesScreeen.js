@@ -95,7 +95,7 @@ function OtherPersonMoviesScreen(props) {
                     <Text style={{ position: 'absolute', right: 0, color: Colors.white, fontSize: RFPercentage(2.6), fontWeight: '600' }} >
                         Reflele
                     </Text>
-                    <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', left: 0 }} >
+                    <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.8} style={{ position: 'absolute', left: 0 }} >
                         <Ionicons name="menu-sharp" style={{ fontSize: RFPercentage(4) }} color={Colors.white} />
                     </TouchableOpacity>
                 </View>
