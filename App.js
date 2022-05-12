@@ -12,6 +12,7 @@ import Room2Screen from './app/screens/Room2Screen';
 import LikedMoviesScreen from './app/screens/LikedMoviesScreen';
 import OtherPersonMoviesScreen from './app/screens/OtherPersonsMoviesScreeen';
 import SwipeScreen from './app/screens/SwipeScreen';
+import Swipe1Screen from './app/screens/Swipe1Screen';
 
 //config
 import Colors from './app/config/Colors';
@@ -22,13 +23,14 @@ const Drawer = createDrawerNavigator();
 export default function App() {
 
   const HomeDrawer = () => {
-    return <Drawer.Navigator screenOptions={{ drawerContentStyle: { marginVertical: RFPercentage(0.2) }, drawerActiveBackgroundColor: Colors.secondary, drawerLabelStyle: { fontSize: RFPercentage(2.2) }, drawerItemStyle: { width: '94%', height: RFPercentage(6) }, drawerActiveTintColor: Colors.darkGrey2, headerShown: false, drawerPosition: 'left' }} activeBackgroundColor={Colors.primary} initialRouteName="HomeScreen" overlayColor="transparent" edgeWidth={100} drawerStyle={{ width: "75%" }}  >
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-      <Drawer.Screen name="Room1Screen" component={Room1Screen} />
-      <Drawer.Screen name="Room2Screen" component={Room2Screen} />
+    return <Drawer.Navigator screenOptions={{ drawerContentStyle: { marginVertical: RFPercentage(0.2) }, drawerActiveBackgroundColor: Colors.secondary, drawerLabelStyle: { fontSize: RFPercentage(2.2) }, drawerItemStyle: { width: '94%' }, drawerActiveTintColor: Colors.darkGrey2, headerShown: false, drawerPosition: 'left' }} activeBackgroundColor={Colors.primary} initialRouteName="HomeScreen" overlayColor="transparent" edgeWidth={100} drawerStyle={{ width: "75%" }}  >
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Swipe" component={Room1Screen} />
+      <Drawer.Screen name="Rooms" component={Room2Screen} />
       <Drawer.Screen name="LikedMoviesScreen" component={LikedMoviesScreen} />
       <Drawer.Screen name="OtherPersonMoviesScreen" component={OtherPersonMoviesScreen} />
       <Drawer.Screen name="SwipeScreen" component={SwipeScreen} />
+      <Drawer.Screen name="Swipe1Screen" component={Swipe1Screen} />
     </Drawer.Navigator>
   }
 

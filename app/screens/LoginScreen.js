@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, KeyboardAvoidingView, ScrollView, StyleSheet } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
@@ -57,7 +57,7 @@ function LoginScreen(props) {
     };
 
     return (
-        <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
+        <Screen style={styles.screen}>
             <LoadingModal show={indicator} />
 
             <View style={{ width: '100%', height: RFPercentage(32), justifyContent: 'center', alignItems: 'center', backgroundColor: '#DE3F3F' }} >
@@ -71,46 +71,68 @@ function LoginScreen(props) {
                 Login
             </Text>
 
-            {/* Input field */}
-            <View style={{ marginTop: RFPercentage(5.2), justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                {inputField.map((item, i) => (
-                    <View key={i} style={{ marginTop: i == 0 ? RFPercentage(2) : RFPercentage(1) }} >
-                        <InputField
-                            placeholder={item.placeholder}
-                            placeholderColor={Colors.darkGrey}
-                            placeholderAtCenter={true}
-                            height={RFPercentage(6.8)}
-                            leftIconName={item.iconName}
-                            backgroundColor={Colors.secondary}
-                            borderWidth={RFPercentage(0.2)}
-                            borderColor={'#FFA4A5'}
-                            secure={item.secure}
-                            borderRadius={RFPercentage(1.4)}
-                            color={Colors.black}
-                            fontSize={RFPercentage(2)}
-                            handleFeild={(text) => handleChange(text, i)}
-                            value={item.value}
-                            width={"92%"}
-                        />
-                    </View>
-                ))}
-            </View>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : null}
+                style={{ flex: 1, width: '100%' }}
+            >
+                <ScrollView style={{ flex: 1, width: '100%' }} >
+                    <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
 
-            {/* Button */}
-            <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(6) }}>
-                <MyAppButton
-                    title="LOGIN"
-                    padding={RFPercentage(1.9)}
-                    onPress={() => handleLogin()}
-                    backgroundColor='#DE3F3F'
-                    color={Colors.white}
-                    bold={false}
-                    borderRadius={RFPercentage(1.6)}
-                    width={"42%"}
-                />
-            </View>
+                        {/* Input field */}
+                        <View style={{ marginTop: RFPercentage(5.2), justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                            {inputField.map((item, i) => (
+                                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(2) : RFPercentage(1) }} >
+                                    <InputField
+                                        placeholder={item.placeholder}
+                                        placeholderColor={Colors.darkGrey}
+                                        placeholderAtCenter={true}
+                                        height={RFPercentage(6.8)}
+                                        leftIconName={item.iconName}
+                                        backgroundColor={Colors.secondary}
+                                        borderWidth={RFPercentage(0.2)}
+                                        borderColor={'#FFA4A5'}
+                                        secure={item.secure}
+                                        borderRadius={RFPercentage(1.4)}
+                                        color={Colors.black}
+                                        fontSize={RFPercentage(2)}
+                                        handleFeild={(text) => handleChange(text, i)}
+                                        value={item.value}
+                                        width={"92%"}
+                                    />
+                                </View>
+                            ))}
+                        </View>
+
+                        {/* Button */}
+                        <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5) }}>
+                            <MyAppButton
+                                title="LOGIN"
+                                padding={RFPercentage(1.9)}
+                                onPress={() => handleLogin()}
+                                backgroundColor='#DE3F3F'
+                                color={Colors.white}
+                                bold={false}
+                                borderRadius={RFPercentage(1.6)}
+                                width={"42%"}
+                            />
+                        </View>
+
+                    </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         </Screen>
     );
 }
+
+
+const styles = StyleSheet.create({
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: "center",
+        backgroundColor: Colors.white
+    }
+})
+
 
 export default LoginScreen;

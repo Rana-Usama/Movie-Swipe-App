@@ -9,7 +9,7 @@ import Screen from './../components/Screen';
 //config
 import Colors from '../config/Colors';
 
-function SwipeScreen(props) {
+function Swipe1Screen(props) {
 
     const movieData = [
 
@@ -37,8 +37,7 @@ function SwipeScreen(props) {
     ]
 
     return (
-        <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
-
+        <Screen style={styles.screen}>
 
             {/* Nav */}
             <View style={styles.navContainer} >
@@ -56,7 +55,11 @@ function SwipeScreen(props) {
                 <View style={{ width: '100%', height: RFPercentage(5), position: 'absolute', bottom: 0, backgroundColor: Colors.white, borderTopLeftRadius: RFPercentage(14) }} />
             </View>
 
-            <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+            <Text style={{ fontWeight: '600', color: Colors.primary, fontSize: RFPercentage(2.5), bottom: RFPercentage(2.2) }} >
+                Anime Friends
+            </Text>
+
+            <View style={{ top: RFPercentage(-0.5), width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                 <FlatList
                     data={movieData}
                     contentContainerStyle={{ marginLeft: RFPercentage(1.5) }}
@@ -118,4 +121,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default SwipeScreen;
+export default Swipe1Screen;

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
-import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
@@ -85,11 +84,11 @@ function LikedMoviesScreen(props) {
     };
 
     return (
-        <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
+        <Screen style={styles.screen}>
 
             {/* Nav */}
-            <View style={{ width: '100%', height: RFPercentage(27.5), justifyContent: 'center', alignItems: 'center', backgroundColor: '#DE3F3F' }} >
-                <View style={{ marginTop: RFPercentage(-12), flexDirection: 'row', width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}  >
+            <View style={styles.navContainer} >
+                <View style={styles.navSubContainer}  >
                     <Text style={{ color: Colors.white, fontSize: RFPercentage(3.6), fontWeight: 'bold' }} >
                         My Movies
                     </Text>
@@ -130,5 +129,29 @@ function LikedMoviesScreen(props) {
         </Screen>
     );
 }
+
+const styles = StyleSheet.create({
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: "center",
+        backgroundColor: Colors.white
+    },
+    navContainer: {
+        width: '100%',
+        height: RFPercentage(27.5),
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#DE3F3F'
+    },
+    navSubContainer: {
+        marginTop: RFPercentage(-12),
+        flexDirection: 'row',
+        width: '90%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
+})
 
 export default LikedMoviesScreen;
