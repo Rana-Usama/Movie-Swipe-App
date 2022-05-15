@@ -25,11 +25,11 @@ export default function App() {
   const HomeDrawer = () => {
     return <Drawer.Navigator screenOptions={{ drawerContentStyle: { marginVertical: RFPercentage(0.2) }, drawerActiveBackgroundColor: Colors.secondary, drawerLabelStyle: { fontSize: RFPercentage(2.2) }, drawerItemStyle: { width: '94%' }, drawerActiveTintColor: Colors.darkGrey2, headerShown: false, drawerPosition: 'left' }} activeBackgroundColor={Colors.primary} initialRouteName="HomeScreen" overlayColor="transparent" edgeWidth={100} drawerStyle={{ width: "75%" }}  >
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Swipe" component={Room1Screen} />
-      <Drawer.Screen name="Rooms" component={Room2Screen} />
+      <Drawer.Screen name="Swipe" component={SwipeScreen} />
+      <Drawer.Screen name="Rooms" component={Room1Screen} />
       <Drawer.Screen name="LikedMoviesScreen" component={LikedMoviesScreen} />
       <Drawer.Screen name="OtherPersonMoviesScreen" component={OtherPersonMoviesScreen} />
-      <Drawer.Screen name="SwipeScreen" component={SwipeScreen} />
+      <Drawer.Screen name="Room2Screen" component={Room2Screen} />
       <Drawer.Screen name="Swipe1Screen" component={Swipe1Screen} />
     </Drawer.Navigator>
   }

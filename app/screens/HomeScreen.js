@@ -14,7 +14,7 @@ function HomeScreen(props) {
     const buttonsData = [
         {
             title: 'SWIPE',
-            onPress: "SwipeScreen"
+            onPress: "Swipe"
 
         },
         {
@@ -23,7 +23,7 @@ function HomeScreen(props) {
         },
         {
             title: 'ROOMS',
-            onPress: "Room1Screen"
+            onPress: "Rooms"
         },
     ]
 
