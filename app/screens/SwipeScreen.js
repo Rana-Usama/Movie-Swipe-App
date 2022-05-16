@@ -4,6 +4,7 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import SwipeCards from "react-native-swipe-cards-deck";
 
+
 //components
 import Screen from './../components/Screen';
 
@@ -38,6 +39,16 @@ function StatusCard({ text }) {
         </View>
     );
 }
+
+function NopeView() {
+    return (
+        <View>
+            <Text>Hello</Text>
+        </View>
+    );
+}
+
+
 
 function SwipeScreen(props) {
 
@@ -132,16 +143,15 @@ function SwipeScreen(props) {
                 {cards ? (
                     <SwipeCards
                         cards={cards}
+                        swipeThreshold={120}
                         renderCard={(cardData) => <Card data={cardData} />}
                         keyExtractor={(cardData) => String(cardData.id)}
                         renderNoMoreCards={() => <StatusCard text="No more cards..." />}
                         actions={{
-                            nope: { onAction: handleNope },
+                            nope: { onAction: handleNope, text: "Nope!", nopeStyle: { borderWidth: 0 } },
+
                             yup: { onAction: handleYup },
                         }}
-                        // If you want a stack of cards instead of one-per-one view, activate stack mode
-                        stack={true}
-                    // stackDepth={3}
                     />
                 ) : (
                     <StatusCard text="Loading..." />
